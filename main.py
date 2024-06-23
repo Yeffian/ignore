@@ -6,8 +6,14 @@ params = sys.argv[1:]
 
 contents = ''
 
-for param in params:
-    contents += '\n' + requests.get(search + param + '.gitignore').text
+
+def generate_ignore(languages):
+    for lang in languages:
+        global contents
+        contents += '\n' + requests.get(search + lang + '.gitignore').text
+
+
+generate_ignore(params)
 
 
 with open('.gitignore', 'w') as file:
