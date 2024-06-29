@@ -11,7 +11,7 @@ def get_available_languages():
     driver.get("https://github.com/github/gitignore")
 
     # wait for the DOM to load
-    time.sleep(1)
+    time.sleep(5)
 
     lang_list = driver.find_element(by=By.XPATH, value='//*[@id="repo-content-pjax-container"]/div/div/div[2]/div['
                                                        '1]/react-partial/div/div/div[3]/div[1]/table/tbody')
@@ -40,5 +40,5 @@ def generate_ignore(languages):
 # generate_ignore(params)
 get_available_languages()
 
-with open('.gitignore', 'w') as file:
+with open('../.gitignore', 'w') as file:
     file.write(contents)
