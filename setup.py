@@ -6,7 +6,7 @@ LONG_DESCRIPTION = "A package that allows you to get gitignore's for different l
 
 # Setting up
 setup(
-    name="ignore",
+    name="python-gitignore-generator",
     version=VERSION,
     author="yeffian (Adit Chakraborty)",
     author_email="<mail@adit.chakraborty2009@gmail.com>",
