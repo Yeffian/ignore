@@ -8,7 +8,15 @@ def get_available_languages():
     from selenium.webdriver.common.by import By
     import time
 
-    driver = webdriver.Safari()
+    driver = None
+
+    if sys.platform == "linux" or sys.platform == "linux2":
+        driver = webdriver.Firefox()
+    elif sys.platform == "darwin":
+        driver = webdriver.Safari()
+    elif sys.platform == "win32":
+        driver = webdriver.Firefox()
+
     driver.get("https://github.com/github/gitignore")
 
     # wait for the DOM to load
@@ -39,3 +47,4 @@ def generate_ignore(languages):
 
     with open('./.gitignore', 'w') as file:
         file.write(contents)
+

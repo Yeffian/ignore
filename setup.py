@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.2'
+VERSION = '0.0.3'
 DESCRIPTION = 'Library to create gitignore files'
 LONG_DESCRIPTION = "A package that allows you to get gitignore's for different languages and/or frameworks."
 
