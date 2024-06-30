@@ -3,6 +3,7 @@ import requests
 
 
 def get_available_languages():
+    langs = []
     from selenium import webdriver
     from selenium.webdriver.common.by import By
     import time
@@ -21,8 +22,10 @@ def get_available_languages():
         if i in [0, 1, 2, 3, 140]:
             pass
         else:
-            print(tr.text.split('.')[0])
+            langs.append(tr.text.split('.')[0])
         i += 1
+
+    return langs
 
 
 search = 'https://raw.githubusercontent.com/github/gitignore/main/'
